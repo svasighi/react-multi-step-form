@@ -1,11 +1,8 @@
 export type WizardStepsProps = {
-  steps: {
-    id: number,
-    title: string,
-    description: string,
-    page: JSX.Element,
-    name: string,
+  id: number,
+  name: string,
+  title: string,
+  description: string,
+  page: JSX.Element,
+}[];
 
-  }[];
-  activeStep: number;
-};

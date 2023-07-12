@@ -1,21 +1,23 @@
-import React, { useState } from 'react'
 import './App.css';
 import Wizard from './Components/wizard/Index'
+import Addons from './Pages/Addons';
+import Info from './Pages/Info';
+import Plan from './Pages/Plan';
+import Summary from './Pages/Summary';
 
 const WizardSteps = [
-  { id: 1, description: "Step 1", title: 'string', name: "Your info", page: <></> },
-  { id: 2, description: "Step 2", title: 'string', name: "Select plan", page: <></> },
-  { id: 3, description: "Step 3", title: 'string', name: "Add-ons", page: <></> },
-  { id: 4, description: "Step 4", title: 'string', name: "Summary", page: <></> },
+  { id: 1, description: "Step 1", title: 'Info', name: "Your info", page: <Info /> },
+  { id: 2, description: "Step 2", title: 'Plan', name: "Select plan", page: <Plan /> },
+  { id: 3, description: "Step 3", title: 'Add-ons', name: "Add-ons", page: <Addons /> },
+  { id: 4, description: "Step 4", title: 'Summary', name: "Summary", page: <Summary /> },
 ]
 
 
 function App() {
-  const [activeStep, setActiveStep] = useState(1);
 
   return (
     <div className="App">
-      <Wizard steps={WizardSteps} activeStep={activeStep} />
+      <Wizard steps={WizardSteps} />
     </div>
   );
 }
