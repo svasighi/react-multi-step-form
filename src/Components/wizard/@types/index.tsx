@@ -6,3 +6,8 @@ export type WizardStepsProps = {
   page: JSX.Element,
 }[];
 
+export interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  steps: WizardStepsProps;
+  activeStep: number;
+  draggableRef: React.RefObject<HTMLDivElement>;
+}

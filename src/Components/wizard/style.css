@@ -135,5 +135,6 @@ p.description {
     align-items: center;
     padding: 15px 45px;
     min-height: 500px;
+    transition:  0.3s linear 0s;
   }
 }
