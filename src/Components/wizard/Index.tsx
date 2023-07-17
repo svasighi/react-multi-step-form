@@ -1,19 +1,21 @@
-import WizardNav from './WizardNav'
+import { useState, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import type { WizardStepsProps, ContentProps } from './@types';
-import { useState, useRef } from 'react'
 import Draggable, { DraggableData, DraggableEvent } from 'react-draggable';
 
-import "./style.css"
+import WizardNav from './WizardNav'
+
+import style from "./style.module.css"
 
 const Wizard = ({ steps, }: { steps: WizardStepsProps }): JSX.Element => {
 
 
   const draggableRef = useRef(null);
   const [activeStep, setActiveStep] = useState(1);
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 910px)' })
+  const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' })
+
   const handleStepChange = (index: number) => {
-    activeStep != index ? setActiveStep(index) : void 0;
+    activeStep != index && setActiveStep(index);
   }
 
   const dragHandler = (e: DraggableEvent, data: DraggableData): void => {
@@ -32,21 +34,19 @@ const Wizard = ({ steps, }: { steps: WizardStepsProps }): JSX.Element => {
     }
     data.node.style.rotate = `0deg`;
   }
-
   return (
-    <div className="card">
-      <div className="sidebar">
-        <WizardNav {...{ steps, activeStep, handleStepChange }} />
-      </div>
-      {isTabletOrMobile ? <Draggable
-        scale={1.6}
-        position={{ x: 0, y: 0 }}
-        onDrag={dragHandler}
-        onStop={stopHandler}
-        nodeRef={draggableRef}
-      >
-        <Content steps={steps} activeStep={activeStep} draggableRef={draggableRef} />
-      </Draggable>
+    <div className={style.card}>
+      <WizardNav {...{ steps, activeStep, handleStepChange }} />
+      {!isDesktop ?
+        <Draggable
+          scale={1.6}
+          position={{ x: 0, y: 0 }}
+          onDrag={dragHandler}
+          onStop={stopHandler}
+          nodeRef={draggableRef}
+        >
+          <Content steps={steps} activeStep={activeStep} draggableRef={draggableRef} />
+        </Draggable>
         : <Content steps={steps} activeStep={activeStep} draggableRef={draggableRef} />
       }
 
@@ -56,12 +56,15 @@ const Wizard = ({ steps, }: { steps: WizardStepsProps }): JSX.Element => {
 
 const Content = ({ steps, activeStep, draggableRef, ...rest }: ContentProps): JSX.Element => {
   return (
-    <div {...rest} className="content" ref={draggableRef}>
-      <h2 className="title">{steps[activeStep - 1].title}</h2>
-      <p className="description">
+    <div {...rest}
+      ref={draggableRef}
+      className={style.content}
+    >
+      <h2>{steps[activeStep - 1].title}</h2>
+      <p>
         {steps[activeStep - 1].description}
       </p>
-      <div className="content-main">
+      <div className={style.contentMain}>
         {steps[activeStep - 1].page}
       </div>
     </div>
