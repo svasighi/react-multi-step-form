@@ -1,137 +1,47 @@
- .card {
-  display: flex;
-  background: var(--White);
-  width: 100%;
-  padding: 20px;
-  border-radius: 20px;
-  width: 870px;
-}
-.card .sidebar {
-  background: url(../../../public/images/bg-sidebar-desktop.svg);
-  height: 568px;
-  width: 274px;
-  flex-shrink: 0;
-  background-repeat: no-repeat;
-}
-.steps {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  padding: 30px;
-  cursor: pointer;
-}
+.card{
+  @apply flex flex-col lg:flex-row items-center lg:flex lg:bg-white rounded-2xl w-10/12 lg:max-w-[900px] p-5 lg:p-0;
+ 
+  & .content{
+    @apply flex flex-col items-center py-4 px-10 min-h-[500px] duration-300 ease-linear absolute lg:relative bg-white w-9/12 top-32 lg:top-0 rounded-3xl lg:rounded-tl-none lg:rounded-bl-none shadow-lg lg:shadow-none;
+  
+    & h2{
+      @apply font-bold text-3xl text-marine-blue mt-3
+    }
+    & p {
+      @apply text-slate-500 mt-0;
+    }
+  }
+ & .sidebar{
+    @apply lg:flex lg:flex-row lg:shrink-0 absolute lg:relative bg-no-repeat top-0 bg-cover w-full lg:w-auto right-0 h-auto lg:h-full bg-[image:var(--sidebar-m)] lg:bg-[image:var(--sidebar-d)] ;
+    
+    & .items {
+      @apply flex flex-row cursor-pointer justify-center mx-0 mt-0 mb-16 py-5 px-11 w-auto lg:flex-col lg:p-8;
+    
+      & .item{
+        @apply flex flex-row content-center	items-center p-5 m-2 hover:bg-[#00023d1a] hover:rounded-xl lg:hover:z-10;
+        
+        & .index{
+            @apply border-light-blue text-white w-9 h-9 flex items-center justify-center border rounded-full;
+        }
+        & .desc{
+          @apply uppercase ml-3 hidden lg:block;
+          
+          & span{
+            @apply font-normal text-sm text-gray-300;
+          }
 
-.steps .step-item {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  align-items: center;
-  margin: 8px 0px;
-  padding: 18px;
-}
-.steps.active, .steps .step-item:hover {
-  background: #00023d1a;
-  border-radius: 10px;
-}
+          & p{
+            @apply my-1 font-medium text-white;
+          }
+        }
+        &.active{
+          @apply bg-[#00023d1a] rounded-xl;
+            & .active{
+                @apply border-none bg-light-blue text-marine-blue;
+            }
+        }
+      }
+    }
 
-.active{
-  background: #00023d1a;
-  border-radius: 10px;
-}
-.active .step-item-number {
-  background: var(--Light-blue);
-  color: var(--Marine-blue)!important;
-  border: none;
-}
-.step-item .step-item-number {
-  height: 35px;
-  width: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--Light-blue);
-  color: var(--White);
-  border-radius: 20px;
-}
-
-.steps .step-item .step-item-details {
-  margin-left: 10px;
-  text-transform: uppercase;
-}
-.steps .step-item .step-item-details span {
-  color: var(--Cool-gray);
-  font-weight: 400;
-  font-size: 14px;
-}
-.steps .step-item .step-item-details p {
-  color: var(--White);
-  margin: 5px 0;
-  font-weight: 500;
-}
-.card .content {
-  padding: 20px 75px;
-}
-
-h2.title {
-  font-weight: 700;
-  font-size: 32px;
-  color: var(--Marine-blue);
-  margin-top: 10px !important;
-}
-p.description {
-  color: var(--Cool-gray);
-  margin-top: 0px;
-}
-
-@media only screen and (max-width : 910px){
-  .centered{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-   .card {
-    all: unset;
-    display: contents;
-  }
-  .card .sidebar {
-    background: url(../../../public/images/bg-sidebar-mobile.svg);
-    width: 100%;
-    height: auto;
-    flex-shrink: 0;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    background-size: cover;
-  }
-  .steps {
-    display: flex;
-    flex-direction: row;
-    margin: 0px 0px 60px;
-    padding: 20px 43px;
-    justify-content: center;
-    align-items: center;
-  }
-  .step-item{
-        width: 35px;
-  }
-  .steps .step-item:hover {
-    z-index: 1;
-  }
-  .step-item .step-item-details {
-        display: none;
-  }
-  .card .content {
-    display: flex;
-    position: absolute;
-    background: var(--White);
-    width: 68%;
-    top: 120px;
-    border-radius: 20px;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 45px;
-    min-height: 500px;
-    transition:  0.3s linear 0s;
   }
 }

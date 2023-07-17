@@ -12,7 +12,7 @@ const Wizard = ({ steps, }: { steps: WizardStepsProps }): JSX.Element => {
 
   const draggableRef = useRef(null);
   const [activeStep, setActiveStep] = useState(1);
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 910px)' })
+  const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' })
 
   const handleStepChange = (index: number) => {
     activeStep != index && setActiveStep(index);
@@ -34,11 +34,10 @@ const Wizard = ({ steps, }: { steps: WizardStepsProps }): JSX.Element => {
     }
     data.node.style.rotate = `0deg`;
   }
-
   return (
     <div className={style.card}>
       <WizardNav {...{ steps, activeStep, handleStepChange }} />
-      {isTabletOrMobile ?
+      {!isDesktop ?
         <Draggable
           scale={1.6}
           position={{ x: 0, y: 0 }}
@@ -57,9 +56,12 @@ const Wizard = ({ steps, }: { steps: WizardStepsProps }): JSX.Element => {
 
 const Content = ({ steps, activeStep, draggableRef, ...rest }: ContentProps): JSX.Element => {
   return (
-    <div {...rest} className={style.content} ref={draggableRef}>
-      <h2 className={style.title}>{steps[activeStep - 1].title}</h2>
-      <p className={style.description}>
+    <div {...rest}
+      ref={draggableRef}
+      className={style.content}
+    >
+      <h2>{steps[activeStep - 1].title}</h2>
+      <p>
         {steps[activeStep - 1].description}
       </p>
       <div className={style.contentMain}>

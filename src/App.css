@@ -1,6 +1,36 @@
-body{
-  overflow: hidden;
+:root{
+  --sidebar-d: url("../public/images/bg-sidebar-desktop.svg");
+  --sidebar-m: url("../public/images/bg-sidebar-mobile.svg");
 }
+
+@font-face {
+  font-family: Ubuntu;
+  src: url(../public/fonts/Ubuntu-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url(../public/fonts/Ubuntu-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url(../public/fonts/Ubuntu-Regular.ttf);
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  font-family: Ubuntu;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  overflow: hidden;
+
+  @apply bg-slate-200;
+}
+
 #root {
   height: 100vh;
 }
@@ -10,5 +40,6 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
+}
 
