@@ -26,7 +26,7 @@ export function WizardNavItem({ step, active = false, handleStepChange }
   return (
     <div className={classNames(style.item, active ? style.active : '')}
       onClick={() => handleStepChange(step.id)}  >
-      <span className={classNames(style.index, active ? style.active : '')}>{step.id}</span>
+      <span className={style.index}>{step.id}</span>
       <div className={style.desc}>
         <span> STEP {step.id}</span>
         <p>{step.name}</p>

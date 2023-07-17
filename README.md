@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# Multistep React Wizard with Draggable on Mobile
+<div align="center"> 
+<img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg" alt="Tailwind" width="60" height="60" style="margin-right:32px"/> 
+<img src="https://seeklogo.com/images/T/typescript-logo-B29A3F462D-seeklogo.com.png" alt="typescript" width="60" height="60" style="margin-right:32px" />
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="React Logo" width="60" height="60" style="margin-right:32px" /> <img src="https://raw.githubusercontent.com/css-modules/logos/master/css-modules-logo.png" alt="CSS Modules" width="60" height="60" style="margin-right:32px"/>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/PostCSS_Logo.svg/240px-PostCSS_Logo.svg.png" alt="Post css" width="60" height="60" style="margin-right:32px"/>
+  </div>
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</div>
 
-## Available Scripts
+### [Watch Live Demo](https://testgstsdtsdtsdtdsd.iran.liara.run/)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is built with Tailwind, TypeScript, React, PostCss ,and CSS Modules. The main purpose of this project is to showcase my skills and knowledge in using these technologies.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies Learned
 
-### `npm test`
+Throughout the development of this project, I have gained a deeper understanding of the following technologies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Tailwind**: A utility-first CSS framework that allowed me to quickly and easily style my components without having to write custom CSS.
+- **TypeScript**: A superset of JavaScript that helped me write more robust and maintainable code by providing type checking and other features.
+- **React**: A popular JavaScript library for building user interfaces that allowed me to create reusable and composable components.
+- **CSS Modules**: A CSS file format that allowed me to write modular and reusable CSS code for my components.
+- **PostCss**: A software development tool that uses JavaScript-based plugins to automate routine CSS operations.[3] It was designed by Andrey Sitnik with the idea taking its origin in his front-end work for Evil Martians.[4]
+## Getting Started
 
-### `npm run build`
+To get started with this project, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository to your local machine.
+2. Install the dependencies by running `npm install`.
+3. Start the development server by running `npm start`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+├── public
+│   └── index.html
+├── src
+│   ├── components
+│   │   ├── component.module.css
+│   │   └── ...
+│   ├── styles
+│   │   ├── App.module.css
+│   │   └── ...
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── README.md
+├── package.json
+├── tsconfig.json
+└── ...
+```
 
-### `npm run eject`
+- `public`: Contains the HTML file that serves as the entry point for the React app.
+- `src/components`: Contains all the React components used in the app, including the `Wizard` component that displays the project logo.
+- `src/components/**/{component_name}.module.css`: Contains all the CSS Modules used in the app, including the `App.module.css` file that styles the main `App` component and all of our stylings uses postcss.
+- `src/App.tsx`: The main component that renders all the other components.
+- `src/index.tsx`: The entry point for the React app.
+- `README.md`: The file you are currently reading.
+- `package.json`: Contains the dependencies and scripts used in the project.
+- `tsconfig.json`: The TypeScript configuration file.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Conclusion
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+I hope you find this project useful and informative. If you have any questions or suggestions, please feel free to reach out to me. Thank you for your time and interest!
